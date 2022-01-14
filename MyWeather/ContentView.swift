@@ -13,8 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            BackgroundView(topColor: isNight ? .black : .blue.opacity(0.88),
-                           bottomColor: isNight ? .gray : Color("lightBlue"))
+            BackgroundView(isNight: $isNight)  // $ sign for binding value
             
             VStack {
                 CityTextView(cityName: "Dubai,\nUnited Arab Emirates")
@@ -64,13 +63,13 @@ struct ContentView_Previews: PreviewProvider {
 
 struct BackgroundView: View {
     
-    var topColor: Color
-    var bottomColor: Color
+    @Binding var isNight: Bool
     
     var body: some View {
 
         LinearGradient(
-                gradient: Gradient(colors: [topColor, bottomColor]),
+                gradient: Gradient(colors: [isNight ? .black : .blue.opacity(0.88),
+                                            isNight ? .gray : Color("lightBlue")]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
