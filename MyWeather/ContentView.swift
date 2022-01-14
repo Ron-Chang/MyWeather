@@ -14,6 +14,7 @@ struct ContentView: View {
                            startPoint: .topLeading,
                            endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
+            
             VStack {
                 Text("Dubai,\nUnited Arab Emirates")
                     .multilineTextAlignment(.center)
@@ -43,8 +44,22 @@ struct ContentView: View {
                 }
                 
                 Spacer()
+                
+                Button {
+                    print("tapped")
+                } label: {
+                    Text("Chang Day Time")
+                        .frame(width: 280, height: 50)
+                        .background(Color.white)
+                        .font(.system(size: 20, weight: .bold, design: .default))
+                        .cornerRadius(12)
+                }
+                
+                Spacer()
+
             }
         }
+        
     }
 }
 
