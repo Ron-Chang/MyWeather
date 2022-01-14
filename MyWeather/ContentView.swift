@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  MyWeather
+//  SwiftPlayground
 //
 //  Created by Ron Chang on 2022/1/14.
 //
@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("My Weather")
-            .padding()
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [.blue.opacity(0.88), .white]),
+                           startPoint: .topLeading,
+                           endPoint: .bottomTrailing)
+                .edgesIgnoringSafeArea(.all)
+        }
+        
     }
 }
 
