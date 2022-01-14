@@ -8,32 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.blue.opacity(0.88), Color("lightBlue")]),
-                           startPoint: .topLeading,
-                           endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.all)
+            BackgroundView(topColor: .blue.opacity(0.88), bottomColor: Color("lightBlue"))
             
             VStack {
-                Text("Dubai,\nUnited Arab Emirates")
-                    .multilineTextAlignment(.center)
-                    .font(.system(size: 32, weight: .medium, design: .default))
-                    .foregroundColor(.white)
-                    .padding()
+                CityTextView(cityName: "Dubai,\nUnited Arab Emirates")
                 
-                VStack(spacing: 10) {
-                    Image(systemName: "cloud.sun.fill")
-                        .renderingMode(.original)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 180, height: 180)
-                    
-                    Text("28°")
-                        .font(.system(size: 70, weight: .medium))
-                        .foregroundColor(.white)
-                }
-                .padding(.bottom, 40)
+                MainWeatherStatusView(imageName: "cloud.sun.fill", temperature: 28)
                 
                 HStack(spacing: 20) {
                     WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temperature: 27)
@@ -48,11 +31,7 @@ struct ContentView: View {
                 Button {
                     print("tapped")
                 } label: {
-                    Text("Chang Day Time")
-                        .frame(width: 280, height: 50)
-                        .background(Color.white)
-                        .font(.system(size: 20, weight: .bold, design: .default))
-                        .cornerRadius(12)
+                    WeatherButton(title: "Chang Day Time", textColor: Color.blue, backgroundColor: Color.white)
                 }
                 
                 Spacer()
@@ -66,6 +45,56 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct BackgroundView: View {
+    
+    var topColor: Color
+    var bottomColor: Color
+    
+    var body: some View {
+
+        LinearGradient(
+                gradient: Gradient(colors: [topColor, bottomColor]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct CityTextView: View {
+    
+    var cityName: String
+    
+    var body: some View {
+        Text(cityName)
+            .multilineTextAlignment(.center)
+            .font(.system(size: 32, weight: .medium, design: .default))
+            .foregroundColor(.white)
+            .padding()
+    }
+}
+
+struct MainWeatherStatusView: View {
+    
+    var imageName: String
+    var temperature: Int
+    
+    var body: some View {
+        VStack(spacing: 10) {
+            Image(systemName: imageName)
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 180, height: 180)
+            
+            Text("\(temperature)°")
+                .font(.system(size: 70, weight: .medium))
+                .foregroundColor(.white)
+        }
+        .padding(.bottom, 40)
     }
 }
 
