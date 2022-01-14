@@ -9,27 +9,41 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var isNight = false
+    
     var body: some View {
         ZStack {
-            BackgroundView(topColor: .blue.opacity(0.88), bottomColor: Color("lightBlue"))
+            BackgroundView(topColor: isNight ? .black : .blue.opacity(0.88),
+                           bottomColor: isNight ? .gray : Color("lightBlue"))
             
             VStack {
                 CityTextView(cityName: "Dubai,\nUnited Arab Emirates")
                 
-                MainWeatherStatusView(imageName: "cloud.sun.fill", temperature: 28)
+                MainWeatherStatusView(imageName: isNight ? "cloud.moon.fill" : "cloud.sun.fill",
+                                      temperature: 28)
                 
                 HStack(spacing: 20) {
-                    WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temperature: 27)
-                    WeatherDayView(dayOfWeek: "WED", imageName: "sun.max.fill", temperature: 29)
-                    WeatherDayView(dayOfWeek: "THU", imageName: "cloud.fill", temperature: 22)
-                    WeatherDayView(dayOfWeek: "FRI", imageName: "cloud.drizzle.fill", temperature: 20)
-                    WeatherDayView(dayOfWeek: "SAT", imageName: "cloud.bolt.rain.fill", temperature: 18)
+                    WeatherDayView(dayOfWeek: "TUE",
+                                   imageName: isNight ? "cloud.moon.fill" :  "cloud.sun.fill",
+                                   temperature: 27)
+                    WeatherDayView(dayOfWeek: "WED",
+                                   imageName: isNight ? "moon.stars.fill" : "sun.max.fill",
+                                   temperature: 29)
+                    WeatherDayView(dayOfWeek: "THU",
+                                   imageName: "cloud.fill",
+                                   temperature: 22)
+                    WeatherDayView(dayOfWeek: "FRI",
+                                   imageName: "cloud.drizzle.fill",
+                                   temperature: 20)
+                    WeatherDayView(dayOfWeek: "SAT",
+                                   imageName: "cloud.bolt.rain.fill",
+                                   temperature: 18)
                 }
                 
                 Spacer()
                 
                 Button {
-                    print("tapped")
+                    isNight.toggle()
                 } label: {
                     WeatherButton(title: "Chang Day Time", textColor: Color.blue, backgroundColor: Color.white)
                 }
