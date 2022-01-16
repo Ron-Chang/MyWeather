@@ -12,15 +12,26 @@
 		E4CAE0BE27918A81001B91D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CAE0BD27918A81001B91D8 /* ContentView.swift */; };
 		E4CAE0C027918A82001B91D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CAE0BF27918A82001B91D8 /* Assets.xcassets */; };
 		E4CAE0C327918A82001B91D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CAE0C227918A82001B91D8 /* Preview Assets.xcassets */; };
+		E4CC7C042793537E0031E6AD /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC7C032793537E0031E6AD /* WeatherService.swift */; };
+		E4CC7C07279357F60031E6AD /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC7C06279357F60031E6AD /* WeatherModel.swift */; };
+		E4CC7C0927935B600031E6AD /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC7C0827935B600031E6AD /* WeatherView.swift */; };
+		E4CC7C0B27935F900031E6AD /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC7C0A27935F900031E6AD /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E44EB5D7279199F40040913D /* WeatherButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherButton.swift; sourceTree = "<group>"; };
+		E49603EA27943572006B5111 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		E49B8DC427942E810073E31A /* Taipei, Taiwan.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Taipei, Taiwan.gpx"; sourceTree = "<group>"; };
 		E4CAE0B827918A81001B91D8 /* MyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CAE0BB27918A81001B91D8 /* MyWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWeatherApp.swift; sourceTree = "<group>"; };
 		E4CAE0BD27918A81001B91D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E4CAE0BF27918A82001B91D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4CAE0C227918A82001B91D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E4CC7C032793537E0031E6AD /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		E4CC7C052793557C0031E6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E4CC7C06279357F60031E6AD /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		E4CC7C0827935B600031E6AD /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		E4CC7C0A27935F900031E6AD /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,9 +45,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E49B8DC327942E5F0073E31A /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				E49B8DC427942E810073E31A /* Taipei, Taiwan.gpx */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		E4CAE0AF27918A81001B91D8 = {
 			isa = PBXGroup;
 			children = (
+				E49603EA27943572006B5111 /* Config.xcconfig */,
 				E4CAE0BA27918A81001B91D8 /* MyWeather */,
 				E4CAE0B927918A81001B91D8 /* Products */,
 			);
@@ -53,9 +73,15 @@
 		E4CAE0BA27918A81001B91D8 /* MyWeather */ = {
 			isa = PBXGroup;
 			children = (
+				E49B8DC327942E5F0073E31A /* Location */,
+				E4CC7C052793557C0031E6AD /* Info.plist */,
 				E4CAE0BB27918A81001B91D8 /* MyWeatherApp.swift */,
 				E4CAE0BD27918A81001B91D8 /* ContentView.swift */,
+				E4CC7C0827935B600031E6AD /* WeatherView.swift */,
 				E44EB5D7279199F40040913D /* WeatherButton.swift */,
+				E4CC7C032793537E0031E6AD /* WeatherService.swift */,
+				E4CC7C06279357F60031E6AD /* WeatherModel.swift */,
+				E4CC7C0A27935F900031E6AD /* WeatherViewModel.swift */,
 				E4CAE0BF27918A82001B91D8 /* Assets.xcassets */,
 				E4CAE0C127918A82001B91D8 /* Preview Content */,
 			);
@@ -140,9 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4CC7C042793537E0031E6AD /* WeatherService.swift in Sources */,
 				E4CAE0BE27918A81001B91D8 /* ContentView.swift in Sources */,
 				E4CAE0BC27918A81001B91D8 /* MyWeatherApp.swift in Sources */,
+				E4CC7C0B27935F900031E6AD /* WeatherViewModel.swift in Sources */,
+				E4CC7C0927935B600031E6AD /* WeatherView.swift in Sources */,
 				E44EB5D8279199F40040913D /* WeatherButton.swift in Sources */,
+				E4CC7C07279357F60031E6AD /* WeatherModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +181,7 @@
 /* Begin XCBuildConfiguration section */
 		E4CAE0C427918A82001B91D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E49603EA27943572006B5111 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -212,6 +243,7 @@
 		};
 		E4CAE0C527918A82001B91D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E49603EA27943572006B5111 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -276,6 +308,8 @@
 				DEVELOPMENT_TEAM = 886P2647AV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyWeather/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires your location to provide weather data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -305,6 +339,8 @@
 				DEVELOPMENT_TEAM = 886P2647AV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyWeather/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires your location to provide weather data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
