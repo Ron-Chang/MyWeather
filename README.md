@@ -12,3 +12,4 @@ This code is based on the following tutorials
 ![Manhattan](src/manhattan.png)
 ![London](src/london.png)
 
+How to set your `API_KEY`: [Secure Secrets in iOS app](https://medium.com/swift-india/secure-secrets-in-ios-app-9f66085800b4)
